@@ -1,0 +1,119 @@
+    /* Define a fonte Inter como padrão */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        /* Fundo cinza claro */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .calc-button {
+        /* Estilos básicos para botões */
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        user-select: none;
+        /* Impede seleção de texto ao clicar */
+    }
+
+    /* Estilos específicos para botões numéricos e ponto */
+    .number-btn,
+    .dot-btn {
+        background-color: #ffffff;
+        /* Fundo branco */
+        color: #1f2937;
+        /* Texto cinza escuro */
+    }
+
+    .number-btn:hover,
+    .dot-btn:hover {
+        background-color: #e5e7eb;
+        /* Cinza mais claro no hover */
+    }
+
+    /* Estilos específicos para botões de operação e limpar */
+    .operator-btn,
+    .clear-btn {
+        background-color: #60a5fa;
+        /* Fundo azul primário */
+        color: #ffffff;
+        /* Texto branco */
+    }
+
+    .operator-btn:hover,
+    .clear-btn:hover {
+        background-color: #3b82f6;
+        /* Azul mais escuro no hover */
+    }
+
+    /* Estilos específicos para o botão de igual */
+    .equals-btn {
+        background-color: #10b981;
+        /* Fundo verde vibrante */
+        color: #ffffff;
+    }
+
+    .equals-btn:hover {
+        background-color: #059669;
+        /* Verde mais escuro no hover */
+    }
+
+    /* Estilo para a tela de exibição */
+    #display {
+        grid-column: span 4;
+        background-color: #1f2937;
+        /* Fundo escuro */
+        color: #ffffff;
+        /* Texto branco */
+        text-align: right;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        overflow-x: auto;
+        /* Permite rolar se o número for muito longo */
+        min-height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 600px) {
+        .calculator-card {
+            width: 100%;
+            max-width: none;
+            height: 100vh;
+            border-radius: 0;
+            padding: 1rem;
+        }
+
+        #display {
+            font-size: 2.5rem;
+            min-height: 4rem;
+            padding: 1rem;
+        }
+
+        .calc-button {
+            padding: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .calculator-grid {
+            gap: 0.75rem;
+        }
+    }
+
